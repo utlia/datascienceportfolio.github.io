@@ -35,8 +35,6 @@
 							<ul>
 								<li><a href="#sql">SQL</a></li>
 								<li><a href="#python">Python</a></li>
-								<li><a href="#powerbi">Power BI</a></li>
-								<li><a href="#tableau">Tableau</a></li>
 								<li><a href="#smm">SMM</a></li>
 								<li><a href="#project">Project</a></li>
 								<li><a href="#about">About</a></li>
@@ -48,16 +46,115 @@
 
 				<!-- Main -->
 					<div id="main">
+						<style>
+								.container {
+								display: flex;
+								gap: 20px;
+								flex-wrap: wrap }
 
-						<!-- Intro -->
-							<article id="sql">
-								<h2 class="major">DATA CLEANING IN SQL</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-							</article>
+								.kiri, .kanan {
+								flex: 1;
+								background-color: rgb(246, 246, 248);
+								padding: 10px;
+								border-radius: 8px;	}
 
-						<!-- Intro -->
+								.pagination {
+								text-align: center;
+								margin-top: 20px; }
+
+								.pagination a {
+								margin: 0 5px;
+								padding: 6px 12px;
+								text-decoration: none;
+								background-color: #373737;
+								color: #333;
+								border-radius: 5px;
+								transition: 0.3s; }
+
+								.pagination a.active {
+								background-color: #333;
+								color: rgb(238, 236, 236); 	}
+
+								.pagination a:hover {
+								background-color: #999;
+								color: rgb(64, 63, 63); 	}
+							</style>
+
+				<!-- SQL -->
+						<article id="sql">
+					<!-- Halaman 1 -->
+							<div id="page1" class="page-content">
+								<div class="container">
+								<div class="kiri">
+									<h2 class="major">DATA CLEANING IN SQL</h2>
+									<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+									<p>Contoh isi artikel pertama tentang data cleaning.</p>
+									<ul class="actions special">
+									<li><a href="https://github.com/utlia/SQL/blob/main/utliarahma.sql" class="button large">View Project</a></li>
+								</ul>
+								</div>
+
+								<div class="kanan">
+									<h2 class="major">DATA EXPLORATION IN SQL</h2>
+									<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+									<p>Contoh isi artikel kedua tentang eksplorasi data.</p>
+								</div>
+								</div>
+							</div>
+
+					<!-- Halaman 2 -->
+							<div id="page2" class="page-content" style="display: none;">
+								<div class="container">
+								<div class="kiri">
+									<h2 class="major">ADVANCED QUERY IN SQL</h2>
+									<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+									<p>Artikel ketiga: contoh advanced query dan analisis data kompleks.</p>
+								</div>
+
+								<div class="kanan">
+									<h2 class="major">SQL AUTOMATION</h2>
+									<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+									<p>Artikel keempat: otomasi proses dengan SQL script.</p>
+								</div>
+								</div>
+							</div>
+
+							<div class="pagination">
+								<a href="#" class="page active" onclick="showPage(1)">1</a>
+								<a href="#" class="page" onclick="showPage(2)">2</a>
+								<a href="#" class="next" onclick="nextPage()">Next</a>
+							</div>
+
+					<!-- Script pagination -->
+							<script>
+								let currentPage = 1;
+
+								function showPage(page) {
+								const pages = document.querySelectorAll('.page-content');
+								const buttons = document.querySelectorAll('.pagination .page');
+								pages.forEach(p => p.style.display = 'none');
+								buttons.forEach(b => b.classList.remove('active'));
+
+								document.getElementById('page' + page).style.display = 'block';
+								buttons[page - 1].classList.add('active');
+								currentPage = page;
+								}
+
+								function nextPage() {
+								const totalPages = document.querySelectorAll('.page-content').length;
+								if (currentPage < totalPages) {
+									showPage(currentPage + 1);
+								}
+								}
+							</script>
+					
+
+						</article>
+						<!-- Pagination -->
+
+					
+
+				<!-- Python -->
 							<article id="python">
 								<h2 class="major">DATA PROCESSING IN PYTHON</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
@@ -65,23 +162,7 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
 							</article>	
 						
-						<!-- Intro -->
-							<article id="powerbi">
-								<h2 class="major">Monitoring with Power BI</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-							</article>
-
-						<!-- Intro -->
-							<article id="tableau">
-								<h2 class="major">Create Dashboard with Tableau</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-							</article>
-
-						<!-- SMM -->
+								<!-- SMM -->
 							<article id="smm">
 								<h2 class="major">SMM in Instagram</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
@@ -89,12 +170,63 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
 							</article>
 
-						<!-- Work -->
+				<!-- project -->
 							<article id="project">
-								<h2 class="major">Data Scientist Project</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+
+					<!-- Project Halaman 1 -->
+							<div id="project-page1" class="page-content">
+								<div class="container">
+								<div class="kiri">
+									<h2 class="major">Human Resources Project</h2>
+									<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+									<p>Contoh isi artikel pertama tentang seberapa besar pengaruh data scientist dalam Human Resources di perusahaan.</p>
+									<ul class="actions special">
+									<li><a href="https://github.com/utlia/SQL" class="button large">View Project</a></li>
+								</ul>
+								</div>
+
+								<div class="kanan">
+									<h2 class="major">Supply Management Project</h2>
+									<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+									<p>Contoh isi artikel kedua tentang data supply management di data scientist</p>
+									<ul class="actions special">
+									<li><a href="https://github.com/utlia/SQL" class="button large">View Project</a></li>
+								</ul>
+								</div>
+								</div>
+							</div>
+
+						<!-- Project Halaman 2 -->
+							<div id="project-page2" class="page-content" style="display: none;">
+								<div class="container">
+								<div class="kiri">
+									<h2 class="major">Procurement Project</h2>
+									<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+									<p>Artikel ketiga : contoh  project data scientist terkait pengimplementasian DS di Unit Procurement.</p>
+									<ul class="actions special">
+									<li><a href="https://github.com/utlia/SQL" class="button large">View Project</a></li>
+								</ul>
+								</div>
+
+								<div class="kanan">
+									<h2 class="major">Marketing Project</h2>
+									<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+									<p>Artikel keempat: otomasi proses dengan Marketing Project.</p>
+									<ul class="actions special">
+									<li><a href="https://github.com/utlia/SQL" class="button large">View Project</a></li>
+								</ul>
+								</div>
+								</div>
+							</div>
+
+								
+							<!-- Pagination -->
+							<div class="pagination">
+								<a href="#" class="page active" onclick="showPage(1,'project')">1</a>
+								<a href="#" class="page" onclick="showPage(2,'project')">2</a>
+								<a href="#" class="next" onclick="nextPage('project')">Next</a>
+							</div>
+
 							</article>
 
 						<!-- About -->
@@ -191,9 +323,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 									</ol>
 									<h4>Icons</h4>
 									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
 									</ul>
 
@@ -377,6 +507,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 					</div>
 
+<!-- ======================================================= -->
+  <!-- LETAKKAN SCRIPT PAGINATION DI SINI (SETELAH ARTIKEL TERAKHIR) -->
+  <!-- ======================================================= -->
+				<!-- === SCRIPT LETAKKAN DI PALING BAWAH === -->
+					
+
+
+
 				<!-- Footer -->
 					<footer id="footer">
 						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
@@ -393,6 +531,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+	
+
+
+
+
 
 	</body>
 </html>
